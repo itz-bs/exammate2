@@ -35,7 +35,7 @@ export const ManageResults = () => {
         marks: 85,
         totalMarks: 100,
         grade: 'A',
-        status: 'pass' as const,
+        status: 'pass',
         uploadedAt: new Date().toISOString()
       }
     ];
@@ -49,7 +49,7 @@ export const ManageResults = () => {
     marks: '',
     totalMarks: '',
     grade: '',
-    status: 'pass' as const,
+    status: 'pass',
     remarks: ''
   });
 

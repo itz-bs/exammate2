@@ -33,9 +33,9 @@ export const ManageNotifications = () => {
         id: 'sample-1',
         title: 'Exam Schedule Update',
         message: 'Mid semester exams will start from January 15th. Please check your hall tickets.',
-        type: 'info' as const,
-        targetRole: 'student' as const,
-        priority: 'high' as const,
+        type: 'info',
+        targetRole: 'student',
+        priority: 'high',
         status: 'sent' as const,
         createdAt: new Date().toISOString(),
         sentAt: new Date().toISOString()
@@ -48,9 +48,9 @@ export const ManageNotifications = () => {
   const [formData, setFormData] = useState({
     title: '',
     message: '',
-    type: 'info' as const,
-    targetRole: 'all' as const,
-    priority: 'medium' as const
+    type: 'info',
+    targetRole: 'all',
+    priority: 'medium'
   });
 
   const saveNotifications = (notifs: Notification[]) => {
