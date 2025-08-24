@@ -13,7 +13,8 @@
 
     /* Required for project references */
     "composite": true,
-    "noEmit": false,
+    "noEmit": true,
+    "emitDeclarationOnly": true,
 
     /* Linting */
     "strict": true,

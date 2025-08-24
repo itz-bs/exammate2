@@ -96,7 +96,7 @@ export const ManageResults = () => {
     const marks = parseInt(formData.marks);
     const totalMarks = parseInt(formData.totalMarks);
     const grade = formData.grade || calculateGrade(marks, totalMarks);
-    const status = marks >= (totalMarks * 0.4) ? 'pass' : 'fail';
+    const status: 'pass' | 'fail' | 'absent' = marks >= (totalMarks * 0.4) ? 'pass' : 'fail';
     
     if (editingResult) {
       const updatedResults = results.map(result =>
@@ -107,7 +107,7 @@ export const ManageResults = () => {
               marks,
               totalMarks,
               grade,
-              status: formData.status
+              status: formData.status as 'pass' | 'fail' | 'absent'
             } 
           : result
       );
@@ -120,7 +120,7 @@ export const ManageResults = () => {
         marks,
         totalMarks,
         grade,
-        status: formData.status,
+        status: formData.status as 'pass' | 'fail' | 'absent',
         remarks: formData.remarks,
         uploadedAt: new Date().toISOString()
       };
@@ -178,7 +178,7 @@ export const ManageResults = () => {
       
       if (student && exam && !isNaN(marks) && !isNaN(totalMarks)) {
         const grade = calculateGrade(marks, totalMarks);
-        const status = marks >= (totalMarks * 0.4) ? 'pass' as const : 'fail' as const;
+        const status: 'pass' | 'fail' | 'absent' = marks >= (totalMarks * 0.4) ? 'pass' : 'fail';
         
         bulkResults.push({
           id: generateId(),

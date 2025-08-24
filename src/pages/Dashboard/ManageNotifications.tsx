@@ -121,9 +121,9 @@ export const ManageNotifications = () => {
       id: generateId(),
       title: row.Title || row.title || '',
       message: row.Message || row.message || '',
-      type: (row.Type || row.type || 'info') as 'info' | 'success' | 'warning' | 'error',
-      targetRole: (row['Target Role'] || row.targetRole || row.target_role || 'all') as 'all' | 'admin' | 'student' | 'faculty' | 'hod',
-      priority: (row.Priority || row.priority || 'medium') as 'low' | 'medium' | 'high',
+      type: (['info', 'success', 'warning', 'error'].includes(row.Type || row.type) ? (row.Type || row.type) : 'info') as 'info' | 'success' | 'warning' | 'error',
+      targetRole: (['all', 'admin', 'student', 'faculty', 'hod'].includes(row['Target Role'] || row.targetRole || row.target_role) ? (row['Target Role'] || row.targetRole || row.target_role) : 'all') as 'all' | 'admin' | 'student' | 'faculty' | 'hod',
+      priority: (['low', 'medium', 'high'].includes(row.Priority || row.priority) ? (row.Priority || row.priority) : 'medium') as 'low' | 'medium' | 'high',
       status: 'draft' as const,
       createdAt: new Date().toISOString()
     })).filter(notif => notif.title && notif.message);
