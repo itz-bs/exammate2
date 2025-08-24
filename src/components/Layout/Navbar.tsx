@@ -50,9 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </Button>
         )}
         <Link to="/" className="flex items-center space-x-2">
-          <div className="bg-primary text-primary-foreground rounded-lg p-2">
-            <span className="font-bold text-lg">EM</span>
-          </div>
+          <img src="/logo.svg" alt="ExamMate" className="h-10 w-10" />
           <span className="font-semibold text-xl hidden sm:block">ExamMate</span>
         </Link>
       </div>
