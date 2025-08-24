@@ -68,13 +68,24 @@ export const ManageNotifications = () => {
     
     if (editingNotification) {
       const updatedNotifications = notifications.map(notif =>
-        notif.id === editingNotification.id ? { ...notif, ...formData } : notif
+        notif.id === editingNotification.id ? {
+          ...notif,
+          title: formData.title,
+          message: formData.message,
+          type: formData.type as 'info' | 'success' | 'warning' | 'error',
+          targetRole: formData.targetRole as 'all' | 'admin' | 'student' | 'faculty' | 'hod',
+          priority: formData.priority as 'low' | 'medium' | 'high'
+        } : notif
       );
       saveNotifications(updatedNotifications);
     } else {
       const newNotification: Notification = {
         id: generateId(),
-        ...formData,
+        title: formData.title,
+        message: formData.message,
+        type: formData.type as 'info' | 'success' | 'warning' | 'error',
+        targetRole: formData.targetRole as 'all' | 'admin' | 'student' | 'faculty' | 'hod',
+        priority: formData.priority as 'low' | 'medium' | 'high',
         status: 'draft',
         createdAt: new Date().toISOString()
       };

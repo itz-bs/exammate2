@@ -11,10 +11,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
 
-    /* Required for project references */
-    "composite": true,
     "noEmit": true,
-    "emitDeclarationOnly": true,
 
     /* Linting */
     "strict": true,
