@@ -128,9 +128,9 @@ export const RegisterPage: React.FC = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-2xl mb-4"
+            className="inline-flex items-center justify-center mb-4"
           >
-            <GraduationCap className="h-8 w-8" />
+            <img src="/logo.svg" alt="ExamMate" className="h-16 w-16" />
           </motion.div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Join Exam Mate</h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
